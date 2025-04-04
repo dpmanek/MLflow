@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+# Mphasis RAG UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for document processing and analytics.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Light/Dark theme toggle
+- Document upload and processing
+- Analytics dashboard with charts and KPIs
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This application is configured to be deployed to GitHub Pages using GitHub Actions.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Automatic Deployment
+
+The application will be automatically deployed to GitHub Pages whenever changes are pushed to the main branch. The deployment process is handled by a GitHub Actions workflow defined in `.github/workflows/deploy.yml`.
+
+### Manual Deployment
+
+If you want to deploy the application manually, you can run:
+
+```bash
+npm run deploy
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will build the application and deploy it to the `gh-pages` branch.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Development
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To run the application locally:
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+
+## Building
+
+To build the application:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## GitHub Pages URL
+
+The application is deployed at: [https://dpmanek.github.io/MLflow](https://dpmanek.github.io/MLflow)

@@ -8,7 +8,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 function App() {
 	return (
 		<ThemeProvider>
-			<BrowserRouter>
+			<BrowserRouter basename="/MLflow">
 				<Navigation />
 				<Routes>
 					<Route path="/" element={<MainLayout />}>
