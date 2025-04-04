@@ -1,0 +1,27 @@
+.toggleButton {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+	margin-left: 1rem;
+}
+
+.toggleButton:hover {
+	background-color: var(--hover-bg);
+}
+
+.icon {
+	color: var(--text-secondary);
+	font-size: 1.25rem;
+	transition: all 0.3s ease;
+}
+
+.toggleButton:hover .icon {
+	color: var(--accent-primary);
+	transform: rotate(15deg);
+}

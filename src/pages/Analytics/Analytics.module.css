@@ -1,0 +1,36 @@
+.container {
+	margin-top: 1rem;
+}
+
+.title {
+	color: var(--text-primary);
+	margin-bottom: 1.5rem;
+}
+
+.kpiSection {
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 2rem;
+	flex-wrap: wrap;
+}
+
+.chartSection {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	margin-bottom: 3rem;
+	width: 100%;
+	row-gap: 4rem; /* Add more vertical spacing between rows */
+}
+
+@media (max-width: 1200px) {
+	.chartSection {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.chartSection {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,38 @@
+.container {
+	background: var(--card-bg);
+	padding: 2rem;
+	border-radius: 8px;
+	box-shadow: var(--card-shadow);
+	border: 1px solid var(--border-color);
+}
+
+.uploadBox {
+	margin-top: 1rem;
+	padding: 2rem;
+	border: 2px dashed var(--border-color);
+	border-radius: 8px;
+	text-align: center;
+	transition: all 0.3s ease;
+	background-color: var(--bg-primary);
+}
+
+.uploadBox:hover {
+	border-color: var(--accent-primary);
+	background-color: var(--accent-secondary);
+}
+
+.fileInput {
+	width: 100%;
+	padding: 0.75rem;
+	color: var(--text-primary);
+	background-color: var(--input-bg);
+	border: 1px solid var(--input-border);
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.fileInput:focus {
+	border-color: var(--input-focus-border);
+	box-shadow: var(--input-focus-shadow);
+	outline: none;
+}
