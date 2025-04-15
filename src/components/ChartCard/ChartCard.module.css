@@ -42,3 +42,9 @@
 	opacity: 0.7;
 	margin-bottom: 1rem;
 }
+
+.chart {
+	height: 100%;
+	width: 100%;
+	min-height: 250px;
+}

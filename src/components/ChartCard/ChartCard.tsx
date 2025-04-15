@@ -11,10 +11,11 @@ export const ChartCard = ({ title, children }: ChartCardProps) => {
 		<div className={styles.card}>
 			<h3 className={styles.title}>{title}</h3>
 			<div className={styles.content}>
-				{/* Placeholder for now, will be replaced with actual chart */}
-				<div className={styles.placeholder}>
-					{children || 'Chart will be displayed here'}
-				</div>
+				{children ? (
+					<div className={styles.chart}>{children}</div>
+				) : (
+					<div className={styles.placeholder}>Chart will be displayed here</div>
+				)}
 			</div>
 		</div>
 	);

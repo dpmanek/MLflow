@@ -27,10 +27,25 @@
 	.chartSection {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	.kpiSection {
+		justify-content: center;
+	}
 }
 
 @media (max-width: 768px) {
 	.chartSection {
 		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.kpiSection {
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.container {
+		margin-top: 0.5rem;
 	}
 }
