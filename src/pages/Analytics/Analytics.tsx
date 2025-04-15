@@ -17,7 +17,7 @@ export const Analytics = () => {
 			<div className={styles.kpiSection}>
 				<KPICard title="Answer Relevance" value="84%" />
 				<KPICard title="Answer Correctness" value="93%" />
-				<KPICard title="Latency" value="1.3s" />
+				<KPICard title="Latency" value="1.2s" />
 				<KPICard title="Readability" value="95%" />
 			</div>
 

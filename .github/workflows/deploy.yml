@@ -27,11 +27,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Install gh-pages package
-        run: npm install gh-pages --save-dev
-
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          npx gh-pages -d dist --message "Deploy: [ci skip]" --no-history
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
