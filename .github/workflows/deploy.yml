@@ -27,10 +27,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Install gh-pages package
+        run: npm install gh-pages --save-dev
+
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
-          force: true # Force push to the gh-pages branch
-          clean: true # Automatically remove deleted files from the deploy branch
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          npx gh-pages -d dist --message "Deploy: [ci skip]" --no-history
