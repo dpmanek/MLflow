@@ -34,7 +34,7 @@ export const HighchartsComponent: React.FC<HighchartsComponentProps> = ({
 	yAxisTitle,
 	series,
 	categories,
-	height = '300px',
+	height = '250px',
 }) => {
 	const { theme } = useTheme();
 
@@ -119,6 +119,9 @@ export const HighchartsComponent: React.FC<HighchartsComponentProps> = ({
 				animation: {
 					duration: 1000,
 				},
+			},
+			column: {
+				stacking: 'normal',
 			},
 		},
 		credits: {

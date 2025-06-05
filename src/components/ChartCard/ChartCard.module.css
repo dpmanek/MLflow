@@ -1,6 +1,6 @@
 .card {
 	background: var(--card-bg);
-	padding: 1.5rem;
+	padding: 1rem 1rem 0.5rem 1rem;
 	border-radius: 8px;
 	box-shadow: var(--card-shadow);
 	height: 100%;
@@ -19,7 +19,7 @@
 .title {
 	color: var(--text-primary);
 	font-size: 1.1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 	font-weight: 500;
 }
 
@@ -46,5 +46,5 @@
 .chart {
 	height: 100%;
 	width: 100%;
-	min-height: 250px;
+	min-height: 200px;
 }

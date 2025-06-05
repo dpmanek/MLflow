@@ -6,21 +6,59 @@ import {
 	llmJudgeData,
 	latencyData,
 	readabilityToxicityData,
-	contentDistributionData,
-	modelComparisonData,
 	latencyAccuracyData,
+	questionsByTopicData,
+	passPercentageData,
+	passDistributionByTopicData,
+	metricsComparisonData,
+	readabilityAccuracyData,
 } from '../../data/chartData';
 
 export const Analytics = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.kpiSection}>
-				<KPICard title="Answer Relevance" value="84%" />
-				<KPICard title="Answer Correctness" value="93%" />
-				<KPICard title="Latency" value="1.2s" />
-				<KPICard title="Readability" value="94%" />
+				<KPICard title="High Answer Relevance" value="84%" />
+				<KPICard title="High Answer Correctness" value="93%" />
+				<KPICard title="Average Latency" value="1.3s" />
+				<KPICard title="High Readability" value="95%" />
+				<KPICard title="Low Toxicity Response" value="32%" />
 			</div>
 
+			{/* Row 2 - New charts */}
+			<div className={styles.chartSection}>
+				<ChartCard title="Number of Questions by Topic">
+					<HighchartsComponent
+						chartType="pie"
+						title=""
+						series={questionsByTopicData.series}
+						height="300px"
+					/>
+				</ChartCard>
+				<ChartCard title="Pass Percentage">
+					<HighchartsComponent
+						chartType="column"
+						title=""
+						series={passPercentageData.series}
+						categories={passPercentageData.categories}
+						xAxisTitle="Result"
+						yAxisTitle="Percentage (%)"
+						height="300px"
+					/>
+				</ChartCard>
+				<ChartCard title="Pass % Distribution by Topic">
+					<HighchartsComponent
+						chartType="scatter"
+						title=""
+						series={passDistributionByTopicData.series}
+						xAxisTitle={passDistributionByTopicData.xAxisTitle}
+						yAxisTitle={passDistributionByTopicData.yAxisTitle}
+						height="300px"
+					/>
+				</ChartCard>
+			</div>
+
+			{/* Row 3 - Original Row 2 charts */}
 			<div className={styles.chartSection}>
 				<ChartCard title="Topic Level and Plot Scores (LLM as a judge metrics)">
 					<HighchartsComponent
@@ -55,21 +93,17 @@ export const Analytics = () => {
 						height="300px"
 					/>
 				</ChartCard>
-				<ChartCard title="Content Distribution">
+			</div>
+
+			{/* Row 4 - New and rearranged charts */}
+			<div className={styles.chartSection}>
+				<ChartCard title="Metrics Comparison">
 					<HighchartsComponent
-						chartType="pie"
+						chartType="column"
 						title=""
-						series={contentDistributionData.series}
-						height="300px"
-					/>
-				</ChartCard>
-				<ChartCard title="Model Comparison">
-					<HighchartsComponent
-						chartType="bar"
-						title=""
-						series={modelComparisonData.series}
-						categories={modelComparisonData.categories}
-						xAxisTitle="Metrics"
+						series={metricsComparisonData.series}
+						categories={metricsComparisonData.categories}
+						xAxisTitle="Models"
 						yAxisTitle="Score (%)"
 						height="300px"
 					/>
@@ -81,6 +115,16 @@ export const Analytics = () => {
 						series={latencyAccuracyData.series}
 						xAxisTitle={latencyAccuracyData.xAxisTitle}
 						yAxisTitle={latencyAccuracyData.yAxisTitle}
+						height="300px"
+					/>
+				</ChartCard>
+				<ChartCard title="Readability vs Accuracy">
+					<HighchartsComponent
+						chartType="scatter"
+						title=""
+						series={readabilityAccuracyData.series}
+						xAxisTitle={readabilityAccuracyData.xAxisTitle}
+						yAxisTitle={readabilityAccuracyData.yAxisTitle}
 						height="300px"
 					/>
 				</ChartCard>

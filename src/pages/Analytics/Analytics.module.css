@@ -11,16 +11,18 @@
 	display: flex;
 	gap: 2rem;
 	margin-bottom: 2rem;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	overflow-x: auto;
 }
 
 .chartSection {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 3rem;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 	width: 100%;
-	row-gap: 4rem; /* Add more vertical spacing between rows */
+	row-gap: 5rem; /* Increased vertical spacing between rows */
 }
 
 @media (max-width: 1200px) {
